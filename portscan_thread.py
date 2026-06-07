@@ -2,8 +2,12 @@ import threading
 from functions import get_banner, get_ip
 from new_fun import port_scan
 from detect_service import detect_service
+from header_parser import head_parser
 hostname = input("Enter the hostname to scan: ")
 ip = get_ip(hostname)
+if ip is None:
+    print("Unable to resolve hostname.")
+    quit()
 all_ports = []
 CHUNK_SIZE = 50
 
@@ -36,7 +40,8 @@ results = {}
 for port in all_ports:
     results[port] = {
         "service": detect_service(port),
-        "banner": get_banner(ip, hostname, port)
+        "header": head_parser(get_banner(ip, hostname, port))
+        
     }
 print("Detected services on open ports:")
 print(results)
