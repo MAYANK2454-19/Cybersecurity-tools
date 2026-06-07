@@ -1,6 +1,6 @@
 import socket
 from dns_lookup import get_ip
-def port_scan(ip :str ,hostname : str ,start_port : int , end_port : int) -> list[int]:
+def port_scan(ip :str ,hostname : str ,start_port : int , end_port : int, all_ports : list) -> list[int]:
     try :
         open_ports = []
         for port in range(start_port, end_port + 1):
@@ -10,6 +10,7 @@ def port_scan(ip :str ,hostname : str ,start_port : int , end_port : int) -> lis
             if result == 0:
                 open_ports.append(port)
             sock.close()
+        all_ports.extend(open_ports)
         return open_ports
     except socket.gaierror :
         print(f"{hostname} is not a valid hostname.")
