@@ -1,5 +1,5 @@
 import threading
-from functions import get_ip
+from functions import get_banner, get_ip
 from new_fun import port_scan
 from detect_service import detect_service
 hostname = input("Enter the hostname to scan: ")
@@ -30,6 +30,13 @@ for t in threads:
 all_ports.sort()
 print(f"Open ports on {hostname} ({ip}): {all_ports}")
 print("Port scanning completed.")
-services = {port: detect_service(port) for port in all_ports}
+
+results = {}
+
+for port in all_ports:
+    results[port] = {
+        "service": detect_service(port),
+        "banner": get_banner(ip, hostname, port)
+    }
 print("Detected services on open ports:")
-print(services)
+print(results)

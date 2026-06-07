@@ -23,12 +23,12 @@ def scan_port(target, port):
     except socket.gaierror :
         print(f"{target} is not a valid hostname.")
         return None
-def get_banner(target, port):
+def get_banner(ip,hostname, port):
     try :
-        ip = get_ip(target)
+        
         if ip is None:
             return None 
-        msg = f"HEAD / HTTP/1.1\r\nHost: {target}\r\n\r\n"
+        msg = f"HEAD / HTTP/1.1\r\nHost: {hostname}\r\n\r\n"
         sock=socket.socket()
         sock.settimeout(1)
         result = sock.connect_ex((ip,port))
@@ -41,5 +41,5 @@ def get_banner(target, port):
             sock.close()
             return None
     except socket.gaierror :
-        print(f"{target} is not a valid hostname.")
+        print(f"{hostname} is not a valid hostname.")
         return None
