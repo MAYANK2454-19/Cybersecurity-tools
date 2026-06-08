@@ -5,15 +5,16 @@ from new_fun import port_scan
 from detect_service import detect_service
 from header_parser import head_parser
 from https_banner import get_https_banner
+from reverse_lookup import reverse_lookup
 
-hostname = input("Enter the hostname to scan: ")
+hostname = input("Enter the hostname to scan: ").strip()
 ip = get_ip(hostname)
 if ip is None:
     print("Unable to resolve hostname.")
     quit()
 all_ports = []
 CHUNK_SIZE = 50
-
+dns_reverse = reverse_lookup(str(ip))
 #threads
 
 threads = []
@@ -48,6 +49,7 @@ for port in all_ports:
     }
 report = {"hostname": hostname, 
           "ip": ip, 
+          "reverse_dns" : dns_reverse,
           "open_ports": results}
 with open("scan_results.json", "w") as file :
     json.dump(report, file, indent = 4)

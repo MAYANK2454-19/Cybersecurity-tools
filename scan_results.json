@@ -1,12 +1,43 @@
 {
-    "hostname": "flipkart.com",
-    "ip": "103.243.32.90",
+    "hostname": "cloudflare.com",
+    "ip": "104.16.132.229",
+    "reverse_dns": null,
     "open_ports": {
         "80": {
             "service": "HTTP",
             "headers": {
-                "content-length": "0",
-                "location": "https://flipkart.com:443/"
+                "Date": "Mon, 08 Jun 2026 01:26:48 GMT",
+                "Content-Type": "text/html",
+                "Content-Length": "167",
+                "Connection": "keep-alive",
+                "Cache-Control": "max-age=3600",
+                "Expires": "Mon, 08 Jun 2026 02:26:48 GMT",
+                "Location": "https://www.cloudflare.com/",
+                "Set-Cookie": "__cf_bm=VxlVqrCB2SAlJ5PVkrz4oeoPhN_mR0O5O9X78QKX7Bk-1780882008-1.0.1.1-DcHZOJABgB3Fkot7htQadoRNljlATXb82UKKqYhAaor9SvfJoCqTttMIs.0fWeXYi5NYYZx5.ix1Gk0Q80ugPPUwEH4L_rHeKZuz2B8rDyg; path=/; expires=Mon, 08-Jun-26 01:56:48 GMT; domain=.cloudflare.com; HttpOnly",
+                "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=3fZA1BG0jC%2B2toXoyGMw6afpSNjMTQ1Q7bbLh8JI720oIzIQ3PFDK0HmAyN4fsn8%2FYRbVD4cS6n5RI1iJOUf%2FT4e17%2B7k4WHK1fX6f%2FNWeXERwi81xy88X6bJ%2BnW86tq\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "Server": "cloudflare",
+                "CF-RAY": "a0841c46e8041e8f-CCU",
+                "alt-svc": "h3=\":443\"; ma=86400"
+            }
+        },
+        "443": {
+            "service": "HTTPS",
+            "headers": {
+                "Date": "Mon, 08 Jun 2026 01:26:49 GMT",
+                "Content-Type": "text/html",
+                "Content-Length": "167",
+                "Connection": "keep-alive",
+                "Cache-Control": "max-age=3600",
+                "Expires": "Mon, 08 Jun 2026 02:26:49 GMT",
+                "Location": "https://www.cloudflare.com/",
+                "Set-Cookie": "__cf_bm=RDH4Vkm7OFfK0Kr5.fRQdJJ7JmiekfXIFCYxn85yHKw-1780882009-1.0.1.1-szejPpCQ5oGjQ6Qe4dUGbQMO7Dr7eNN4VsZC1T_rRtt.j4_PF_zw6iLhPf6nXTHO6nA.XDyJNpNQIj4Vvt2dyfSYQrfJvCxRbCmGnRVa0x0; path=/; expires=Mon, 08-Jun-26 01:56:49 GMT; domain=.cloudflare.com; HttpOnly; Secure",
+                "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ADB12mamNzP2HP%2BWUPrKK2tKcYTzDKp0VPiRM9ZwKvlXKts2u9fCnvJWCqbcvmFWrEIzxh78yShi8EHsCNDoBE1AFMxc6I5uozX%2Fw15XF3zUznOzBoA6GASBUvDUyTSq\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "Strict-Transport-Security": "max-age=15780000; includeSubDomains",
+                "Server": "cloudflare",
+                "CF-RAY": "a0841c4dbad77e2c-CCU",
+                "alt-svc": "h3=\":443\"; ma=86400"
             }
         }
     }
