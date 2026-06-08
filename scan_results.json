@@ -1,25 +1,13 @@
 {
-    "hostname": "google.com",
-    "ip": "142.251.222.206",
+    "hostname": "flipkart.com",
+    "ip": "103.243.32.90",
     "open_ports": {
         "80": {
             "service": "HTTP",
-            "header": {
-                "Location": "http://www.google.com/",
-                "Content-Type": "text/html; charset=UTF-8",
-                "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-uKZoC9z5TDE6G4quYQwS6w' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
-                "Date": "Sun, 07 Jun 2026 23:56:32 GMT",
-                "Expires": "Tue, 07 Jul 2026 23:56:32 GMT",
-                "Cache-Control": "public, max-age=2592000",
-                "Server": "gws",
-                "Content-Length": "219",
-                "X-XSS-Protection": "0",
-                "X-Frame-Options": "SAMEORIGIN"
+            "headers": {
+                "content-length": "0",
+                "location": "https://flipkart.com:443/"
             }
-        },
-        "443": {
-            "service": "HTTPS",
-            "header": {}
         }
     }
 }

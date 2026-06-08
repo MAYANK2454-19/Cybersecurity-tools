@@ -4,6 +4,7 @@ from functions import get_banner, get_ip
 from new_fun import port_scan
 from detect_service import detect_service
 from header_parser import head_parser
+from https_banner import get_https_banner
 
 hostname = input("Enter the hostname to scan: ")
 ip = get_ip(hostname)
@@ -42,7 +43,7 @@ results = {}
 for port in all_ports:
     results[port] = {
         "service": detect_service(port),
-        "headers": head_parser(get_banner(ip, hostname, port))
+        "headers": head_parser(get_banner(ip, hostname, port)) if port != 443 else head_parser(get_https_banner(ip, hostname, port))
         
     }
 report = {"hostname": hostname, 
