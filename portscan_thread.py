@@ -1,8 +1,10 @@
 import threading
+import json
 from functions import get_banner, get_ip
 from new_fun import port_scan
 from detect_service import detect_service
 from header_parser import head_parser
+
 hostname = input("Enter the hostname to scan: ")
 ip = get_ip(hostname)
 if ip is None:
@@ -40,8 +42,13 @@ results = {}
 for port in all_ports:
     results[port] = {
         "service": detect_service(port),
-        "header": head_parser(get_banner(ip, hostname, port))
+        "headers": head_parser(get_banner(ip, hostname, port))
         
     }
-print("Detected services on open ports:")
-print(results)
+report = {"hostname": hostname, 
+          "ip": ip, 
+          "open_ports": results}
+with open("scan_results.json", "w") as file :
+    json.dump(report, file, indent = 4)
+print("Detected services on open ports have been saved to scan_results.json")
+# print(results)
