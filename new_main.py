@@ -1,4 +1,4 @@
-from new_fun import port_scan
+from cybertools.open_ports import port_scan
 from dns_lookup import get_ip
 hostname = input("Enter the hostname to scan: ")
 start_port = int(input("Enter the starting port number: "))

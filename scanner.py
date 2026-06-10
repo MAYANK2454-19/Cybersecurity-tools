@@ -1,6 +1,6 @@
 import threading
 from functions import get_banner, get_ip
-from new_fun import port_scan
+from cybertools.open_ports import port_scan
 from detect_service import detect_service
 from header_parser import head_parser
 from https_banner import get_https_banner
